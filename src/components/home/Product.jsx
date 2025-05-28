@@ -1,45 +1,47 @@
-import React, { useState } from 'react';
+"use client";
+
+import React, { useState } from "react";
 
 const products = [
   {
-    name: 'Ethiopian Yirgacheffe Beans - Floral & Citrusy',
+    name: "Ethiopian Yirgacheffe Beans - Floral & Citrusy",
     price: 450,
-    image: './image/product1.png',
+    image: "./image/product1.png",
   },
   {
-    name: 'Colombian Supremo - Smooth & Balanced',
+    name: "Colombian Supremo - Smooth & Balanced",
     price: 525,
-    image: './image/product2.png',
+    image: "./image/product2.png",
   },
   {
-    name: 'Sumatra Mandheling - Earthy & Bold',
+    name: "Sumatra Mandheling - Earthy & Bold",
     price: 575,
-    image: './image/product3.png',
+    image: "./image/product3.png",
   },
   {
-    name: 'Guatemalan Antigua - Rich & Velvety',
+    name: "Guatemalan Antigua - Rich & Velvety",
     price: 475,
-    image: './image/product4.png',
+    image: "./image/product4.png",
   },
   {
-    name: 'Brazil Santos - Sweet & Nutty',
+    name: "Brazil Santos - Sweet & Nutty",
     price: 625,
-    image: './image/product5.png',
+    image: "./image/product5.png",
   },
   {
-    name: 'Kenyan AA - Bright & Wine-like Acidity',
+    name: "Kenyan AA - Bright & Wine-like Acidity",
     price: 600,
-    image: './image/product6.png',
+    image: "./image/product6.png",
   },
   {
-    name: 'Costa Rica Tarrazú - Clean & Citrusy',
+    name: "Costa Rica Tarrazú - Clean & Citrusy",
     price: 500,
-    image: './image/product7.png',
+    image: "./image/product7.png",
   },
   {
-    name: 'Honduras Marcala - Sweet & Full-bodied',
+    name: "Honduras Marcala - Sweet & Full-bodied",
     price: 675,
-    image: './image/product8.png',
+    image: "./image/product8.png",
   },
 ];
 
@@ -54,17 +56,23 @@ export default function ProductSection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-[#f8f5f2] to-white min-h-screen relative overflow-hidden">
+    <section
+      id="product"
+      className="py-24 bg-gradient-to-br from-[#f8f5f2] to-white min-h-screen relative overflow-hidden"
+    >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-16 border-b-2 border-b-[#8B4513] pb-4">
           <h2 className="text-4xl font-bold text-[#8B4513]">Products</h2>
         </div>
 
         <div className="mb-12">
-          <h3 className="text-xl font-semibold mb-2">SIGNATURE BEAN COLLECTION</h3>
+          <h3 className="text-xl font-semibold mb-2">
+            SIGNATURE BEAN COLLECTION
+          </h3>
           <p className="text-gray-600 max-w-2xl">
-            Explore our finest selection of whole coffee beans sourced from top regions around the world.
-            Perfectly roasted for flavor, aroma, and depth.
+            Explore our finest selection of whole coffee beans sourced from top
+            regions around the world. Perfectly roasted for flavor, aroma, and
+            depth.
           </p>
         </div>
 
@@ -82,8 +90,12 @@ export default function ProductSection() {
                 />
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2 leading-snug">{product.name}</h3>
-                <div className="text-[#8B4513] font-bold mb-4">NPR {product.price.toFixed(2)}</div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2 leading-snug">
+                  {product.name}
+                </h3>
+                <div className="text-[#8B4513] font-bold mb-4">
+                  NPR {product.price.toFixed(2)}
+                </div>
                 <button
                   onClick={() => addToCart(product)}
                   className="bg-[#8B4513] text-white px-4 py-2 rounded-lg hover:bg-[#6e3911] transition"
@@ -118,7 +130,10 @@ export default function ProductSection() {
             transform: translateY(100vh) rotate(0deg);
             opacity: 0;
           }
-          10%, 90% { opacity: 0.1; }
+          10%,
+          90% {
+            opacity: 0.1;
+          }
           to {
             transform: translateY(-100px) rotate(360deg);
             opacity: 0;
