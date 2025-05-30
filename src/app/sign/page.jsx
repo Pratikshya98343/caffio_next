@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { IoMailUnreadSharp } from "react-icons/io5";
@@ -8,8 +8,8 @@ import { FaLock } from "react-icons/fa";
 
 export default function SigninPage() {
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
@@ -17,51 +17,51 @@ export default function SigninPage() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.email) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
+      newErrors.email = "Please enter a valid email";
     }
-    
+
     if (!formData.password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = "Password is required";
     } else if (formData.password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters';
+      newErrors.password = "Password must be at least 6 characters";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = () => {
     if (!validateForm()) return;
-    
+
     setIsLoading(true);
-    
+
     // Simulate API call
     setTimeout(() => {
-      console.log('Signin attempt:', formData);
+      console.log("Signin attempt:", formData);
       setIsLoading(false);
-      alert('Login successful! Check console for form data.');
+      alert("Login successful! Check console for form data.");
       // Here you would typically make an API call to authenticate
     }, 1500);
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSubmit();
     }
   };
@@ -72,9 +72,11 @@ export default function SigninPage() {
         {/* Logo/Brand */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-            <Lock className="w-8 h-8 text-white" />
+            <FaLock className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome back</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Welcome back
+          </h1>
           <p className="text-gray-600">Sign in to your account to continue</p>
         </div>
 
@@ -83,12 +85,15 @@ export default function SigninPage() {
           <div className="space-y-6">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Email address
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <IoMailUnreadSharp  className="h-5 w-5 text-gray-400" />
+                  <IoMailUnreadSharp className="h-5 w-5 text-gray-400" />
                 </div>
                 <input
                   id="email"
@@ -98,7 +103,9 @@ export default function SigninPage() {
                   onChange={handleInputChange}
                   onKeyPress={handleKeyPress}
                   className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all ${
-                    errors.email ? 'border-red-300 bg-red-50' : 'border-gray-300'
+                    errors.email
+                      ? "border-red-300 bg-red-50"
+                      : "border-gray-300"
                   }`}
                   placeholder="Enter your email"
                 />
@@ -110,22 +117,27 @@ export default function SigninPage() {
 
             {/* Password Field */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Password
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaLock  className="h-5 w-5 text-gray-400" />
+                  <FaLock className="h-5 w-5 text-gray-400" />
                 </div>
                 <input
                   id="password"
                   name="password"
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   value={formData.password}
                   onChange={handleInputChange}
                   onKeyPress={handleKeyPress}
                   className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all ${
-                    errors.password ? 'border-red-300 bg-red-50' : 'border-gray-300'
+                    errors.password
+                      ? "border-red-300 bg-red-50"
+                      : "border-gray-300"
                   }`}
                   placeholder="Enter your password"
                 />
@@ -135,9 +147,9 @@ export default function SigninPage() {
                   className="absolute inset-y-0 right-0 pr-3 flex items-center"
                 >
                   {showPassword ? (
-                    <IoEyeOff  className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                    <IoEyeOff className="h-5 w-5 text-gray-400 hover:text-gray-600" />
                   ) : (
-                    <FaEye  className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                    <FaEye className="h-5 w-5 text-gray-400 hover:text-gray-600" />
                   )}
                 </button>
               </div>
@@ -155,10 +167,12 @@ export default function SigninPage() {
                 />
                 <span className="ml-2 text-sm text-gray-600">Remember me</span>
               </label>
-              <button 
+              <button
                 type="button"
                 className="text-sm text-indigo-600 hover:text-indigo-800 font-medium"
-                onClick={() => alert('Forgot password functionality would go here')}
+                onClick={() =>
+                  alert("Forgot password functionality would go here")
+                }
               >
                 Forgot password?
               </button>
@@ -177,17 +191,17 @@ export default function SigninPage() {
                   Signing in...
                 </div>
               ) : (
-                'Sign in'
+                "Sign in"
               )}
             </button>
           </div>
 
           <p className="mt-8 text-center text-sm text-gray-600">
-            Don't have an account?{' '}
-            <button 
+            Don't have an account?{" "}
+            <button
               type="button"
               className="font-medium text-indigo-600 hover:text-indigo-800"
-              onClick={() => alert('Sign up functionality would go here')}
+              onClick={() => alert("Sign up functionality would go here")}
             >
               Sign up for free
             </button>

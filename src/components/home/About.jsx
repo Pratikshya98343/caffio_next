@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 
@@ -19,7 +20,7 @@ const About = () => {
 
           {/* Image Section */}
           <div className="about-image relative overflow-hidden rounded-xl shadow-xl">
-            <img src='/image/about.png' className="w-full h-96 object-cover transition-transform duration-300 hover:scale-105"/>
+            <Image src='/image/about.png' alt='about image' height={2000} width={2000} className="w-full h-96 object-cover transition-transform duration-300 hover:scale-105"/>
           </div>
         </div>
       </div>

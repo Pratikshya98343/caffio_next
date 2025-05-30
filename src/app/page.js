@@ -5,7 +5,6 @@ import Menu from "@/components/home/Menu";
 import ProductSection from "@/components/home/Product";
 import Welcome from "@/components/home/Welcome";
 import Image from "next/image";
-import SignIn from "./sign/Sigin";
 import CaffioProfileDashboard from "@/components/home/Profile";
 
 export default function Home() {
