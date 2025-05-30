@@ -1,9 +1,10 @@
 import React from 'react';
 
+
 const About = () => {
   return (
     <section id="About" className="about bg-gradient-to-br from-[#8B4513] to-[#D2691E] text-white py-20">
-      <div className="container mx-auto px-6">v
+      <div className="container mx-auto px-6">
         <div className="about-content grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text Section */}
           <div className="about-text">
@@ -18,11 +19,7 @@ const About = () => {
 
           {/* Image Section */}
           <div className="about-image relative overflow-hidden rounded-xl shadow-xl">
-            <img
-              src="./image/about.png"
-              alt="Coffee Shop Interior"
-              className="w-full h-96 object-cover transition-transform duration-300 hover:scale-105"
-            />
+            <img src='/image/about.png' className="w-full h-96 object-cover transition-transform duration-300 hover:scale-105"/>
           </div>
         </div>
       </div>

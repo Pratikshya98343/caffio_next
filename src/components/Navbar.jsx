@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
@@ -10,14 +11,14 @@ const Navbar = () => {
         <img src="image/logo.png" className="h-20 w-20" />
       </div>
 
-      <div className="text-white flex items-center gap-x-6 text-lg font-bold">
+  <div className="text-white flex items-center gap-x-6 text-lg font-bold">
   <a href="#Home">Home</a>
   <a href="#About">About</a>
   <a href="#Menu">Menu</a>
   <a href="#product">Product</a>
   <a href="#Gallery">Gallery</a>
   <a href="#contact">Contact</a>
-</div>
+  </div>
 
 
       <div className="flex items-center gap-5">
