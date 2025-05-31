@@ -10,12 +10,12 @@ import CaffioProfileDashboard from "@/components/home/Profile";
 export default function Home() {
   return (
     <div>
-      <Welcome />
-      <About />
-      <Menu />
-      <ProductSection />
-      <GallerySection />
-      <ContactSection />
+      <Welcome/>
+      <About/>
+      <Menu/>
+      <ProductSection/>
+      <GallerySection/>
+      <ContactSection/>
     </div>
   );
 }

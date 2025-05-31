@@ -67,7 +67,7 @@ const CaffioProfileDashboard = () => {
 
   return (
     <div className="flex h-screen overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100">
-      {/* Sidebar */}
+      
       <nav className="w-80 h-full bg-gradient-to-b from-amber-900/95 to-orange-900/95 backdrop-blur-lg p-8 shadow-2xl flex flex-col">
         {/* Logo */}
         <div className="text-center mb-12">
