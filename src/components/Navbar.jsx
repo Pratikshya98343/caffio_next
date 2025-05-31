@@ -26,7 +26,7 @@ const Navbar = () => {
         <Link href="/sign">
           <FaRegUserCircle className="h-10 w-10 text-white " />
         </Link>
-        <Link href="Cart">
+        <Link href="/cart">
           <FaShoppingCart className="h-10 w-10 text-white" />
         </Link>
       </div>
