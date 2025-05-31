@@ -34,191 +34,140 @@ export default function ContactSection() {
   return (
     <section 
       id="contact" 
-      className="min-h-screen flex flex-col justify-center text-center py-24 px-12"
-      style={{ backgroundColor: '#2c1f1f' }}
+      className="relative min-h-screen bg-gradient-to-br from-gray-50 to-gray-100"
     >
-      {/* Contact Header */}
-      <div className="mb-12">
-        <h1 
-          className="text-5xl mb-5"
-          style={{ 
-            color: '#ff9900',
-            textShadow: '0 0 10px rgba(255, 153, 0, 0.7)'
-          }}
-        >
-          GET IN TOUCH
-        </h1>
-        <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
-          We'd love to hear from you! Whether you have questions about our menu, want to book a private event, 
-          or simply want to share your coffee experience with us, don't hesitate to reach out.
-        </p>
-      </div>
-      
-      {/* Contact Container */}
-      <div className="bg-white p-12 rounded-2xl shadow-2xl flex flex-wrap justify-between items-stretch max-w-6xl mx-auto">
-        {/* Map Container */}
-        <div className="flex-1 min-w-[300px] m-4">
-          <img 
-            src="./image/map.png" 
-            alt="Caffio Location Map"
-            className="w-full h-full object-cover rounded-xl shadow-lg"
-          />
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-800">
+            CONTACT US
+          </h1>
+          <div className="w-24 h-1 bg-orange-400 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            We'd love to hear from you! Get in touch with us for any questions about our services, 
+            reservations, or just to say hello.
+          </p>
         </div>
         
-        {/* Form Container */}
-        <div className="flex-1 min-w-[300px] m-4">
-          <h2 
-            className="text-3xl text-center mb-8"
-            style={{ color: '#3d271e' }}
-          >
-            Send Us a Message
-          </h2>
-          
-          <div className="space-y-5">
-            <div>
-              <label 
-                htmlFor="name" 
-                className="block mb-2 text-left font-bold text-lg"
-                style={{ color: '#3d271e' }}
-              >
-                Full Name:
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Enter your full name"
-                required
-                className="w-full p-4 mb-5 border-2 border-gray-300 rounded-lg text-base bg-gray-100 text-gray-800 transition-all duration-300 focus:outline-none focus:shadow-lg"
-                style={{
-                  backgroundColor: '#f9f9f9',
-                  borderColor: '#e0e0e0'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = '#ff9900';
-                  e.target.style.boxShadow = '0 0 8px rgba(255, 153, 0, 0.3)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = '#e0e0e0';
-                  e.target.style.boxShadow = 'none';
-                }}
-              />
-            </div>
+        {/* Main Contact Container */}
+        <div className="max-w-5x2 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Contact Info Section */}
+            <div className="bg-orange-50 rounded-3xl p-12 shadow-lg">
+              <h3 className="text-4xl font-bold text-gray-800 mb-10">Get In Touch</h3>
+              
+              {/* Map Container */}
+              <div className="relative overflow-hidden rounded-xl mb-8">
+                <img 
+                  src="./image/map.png" 
+                  alt="Caffio Location Map"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
 
-            <div>
-              <label 
-                htmlFor="email" 
-                className="block mb-2 text-left font-bold text-lg"
-                style={{ color: '#3d271e' }}
-              >
-                Email Address:
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Enter your email address"
-                required
-                className="w-full p-4 mb-5 border-2 border-gray-300 rounded-lg text-base bg-gray-100 text-gray-800 transition-all duration-300 focus:outline-none focus:shadow-lg"
-                style={{
-                  backgroundColor: '#f9f9f9',
-                  borderColor: '#e0e0e0'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = '#ff9900';
-                  e.target.style.boxShadow = '0 0 8px rgba(255, 153, 0, 0.3)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = '#e0e0e0';
-                  e.target.style.boxShadow = 'none';
-                }}
-              />
+              {/* Additional Info */}
+              <div className="space-y-6">
+                <div className="p-6 bg-white rounded-xl text-center shadow-sm">
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    We're here to help! Send us a message using the form and we'll get back to you as soon as possible. 
+                    For immediate assistance, please check our footer for contact details and business hours.
+                  </p>
+                </div>
+                
+                <div className="p-6 bg-orange-100 rounded-xl text-center">
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Special Events & Catering</h4>
+                  <p className="text-gray-600">
+                    Planning a special event? We offer catering services and private bookings. 
+                    Let us know your requirements in the message form!
+                  </p>
+                </div>
+              </div>
             </div>
+            
+            {/* Form Section */}
+            <div className="bg-blue-50 rounded-3xl p-12 shadow-lg">
+              <h2 className="text-4xl font-bold text-gray-800 mb-10">
+                Send Us a Message
+              </h2>
+              
+              <div className="space-y-6">
+                {/* Name Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Enter your full name"
+                    required
+                    className="w-full p-4 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-200"
+                  />
+                </div>
 
-            <div>
-              <label 
-                htmlFor="phone" 
-                className="block mb-2 text-left font-bold text-lg"
-                style={{ color: '#3d271e' }}
-              >
-                Phone Number:
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-                placeholder="Enter your phone number"
-                className="w-full p-4 mb-5 border-2 border-gray-300 rounded-lg text-base bg-gray-100 text-gray-800 transition-all duration-300 focus:outline-none focus:shadow-lg"
-                style={{
-                  backgroundColor: '#f9f9f9',
-                  borderColor: '#e0e0e0'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = '#ff9900';
-                  e.target.style.boxShadow = '0 0 8px rgba(255, 153, 0, 0.3)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = '#e0e0e0';
-                  e.target.style.boxShadow = 'none';
-                }}
-              />
-            </div>
+                {/* Email Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Enter your email address"
+                    required
+                    className="w-full p-4 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-200"
+                  />
+                </div>
 
-            <div>
-              <label 
-                htmlFor="message" 
-                className="block mb-2 text-left font-bold text-lg"
-                style={{ color: '#3d271e' }}
-              >
-                Your Message:
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                rows={6}
-                placeholder="Tell us what's on your mind..."
-                required
-                className="w-full p-4 mb-5 border-2 border-gray-300 rounded-lg text-base bg-gray-100 text-gray-800 transition-all duration-300 focus:outline-none focus:shadow-lg resize-y"
-                style={{
-                  backgroundColor: '#f9f9f9',
-                  borderColor: '#e0e0e0',
-                  height: '150px'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = '#ff9900';
-                  e.target.style.boxShadow = '0 0 8px rgba(255, 153, 0, 0.3)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = '#e0e0e0';
-                  e.target.style.boxShadow = 'none';
-                }}
-              />
-            </div>
+                {/* Phone Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Enter your phone number"
+                    className="w-full p-4 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-200"
+                  />
+                </div>
 
-            <button
-              onClick={handleSubmit}
-              className="w-full py-4 px-8 border-none rounded-full cursor-pointer text-lg font-bold text-white transition-all duration-300 hover:shadow-lg"
-              style={{ backgroundColor: '#ff9900' }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#e68a00';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = '#ff9900';
-              }}
-            >
-              Send Message
-            </button>
-          </div>
-        </div>
-      </div>
+                {/* Message Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Your Message *
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows={5}
+                    placeholder="Tell us what's on your mind..."
+                    required
+                    className="w-full p-4 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-200 resize-none"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  onClick={handleSubmit}
+                  className="w-full py-4 px-6 bg-orange-400 hover:bg-orange-500 rounded-lg text-white font-semibold text-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                >
+                  Send Message
+                </button>
+              </div>
+
+
+                </div>
+              </div>
+    </div>
     </section>
   );
 }

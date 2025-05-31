@@ -1,12 +1,16 @@
+// app/sign/signin/page.jsx
+
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { IoMailUnreadSharp } from "react-icons/io5";
 import { FaLock } from "react-icons/fa";
 
-export default function SigninPage() {
+export default function SignInPage() {
+  // State management
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -15,6 +19,7 @@ export default function SigninPage() {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
+  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -27,6 +32,7 @@ export default function SigninPage() {
     }
   };
 
+  // Validate form inputs
   const validateForm = () => {
     const newErrors = {};
 
@@ -46,6 +52,7 @@ export default function SigninPage() {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Handle form submission
   const handleSubmit = () => {
     if (!validateForm()) return;
 
@@ -60,6 +67,7 @@ export default function SigninPage() {
     }, 1500);
   };
 
+  // Handle key press (Enter)
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSubmit();
@@ -198,13 +206,12 @@ export default function SigninPage() {
 
           <p className="mt-8 text-center text-sm text-gray-600">
             Don't have an account?{" "}
-            <button
-              type="button"
+            <Link
+              href="/sign/signup"
               className="font-medium text-indigo-600 hover:text-indigo-800"
-              onClick={() => alert("Sign up functionality would go here")}
             >
               Sign up for free
-            </button>
+            </Link>
           </p>
         </div>
       </div>
